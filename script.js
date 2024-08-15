@@ -1,9 +1,13 @@
-const inputs = document.querySelectorAll('.controls input');
+const video = document.querySelector('.viewer');
+const speedSlider = document.quertSelector('.speed-slider');
+const speedValue = document.querySelector(.'speed-value');
 
-    function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
-    }
+function updatedSpeed() {
+	const speed = speedSlider.value;
+	video.playbackRate = speed;
+	speedValue.textContent = `${speed}`;
+}
 
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+speedSlider.addEventListener('input', updatedSpeed);
+
+updatedSpeed();
