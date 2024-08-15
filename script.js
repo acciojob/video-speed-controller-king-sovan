@@ -1,5 +1,5 @@
 const player = document.querySelector('.player');
-const video = player.querySelector('.viewer');
+const video = player.querySelector('.player__video');
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
@@ -29,7 +29,7 @@ function rewind(){
 }
 
 function forward() {
-	video.currentTIme += 10;
+	video.currentTIme += 25;
 }
 
 function handleVolumeUpdate() {
